@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [windows-msvc]
+        platform: [windows-msvc,windows-clangcl]
         arch: [x64]
         double: [true]
         editor: [false, true]
