@@ -76,3 +76,9 @@ jobs:
           arch: ${{ matrix.arch }}
           editor: ${{ matrix.editor }}
           config: ${{ matrix.config }}
+   
+      - name: Deploy
+        uses: actions/upload-artifact@v4
+        with:
+          name: godot-jolt-double
+          path: D:/a/godot-jolt/godot-jolt/examples/addons/godot-jolt/
