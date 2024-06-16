@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [windows-msvc,windows-clangcl]
+        platform: [windows-msvc]
         arch: [x64]
         double: [true]
         editor: [false, true]
@@ -45,10 +45,10 @@ jobs:
         # HACK(mihe): 32-bit clang-cl builds are compiled using a 32-bit compiler, which tend to run
         # out of memory randomly when IPO/LTO is enabled, so we disable that for all 32-bit clang-cl
         # builds by injecting the relevant CMake argument using `include`
-        include:
-          - platform: windows-clangcl
-            arch: x86
-            args: -DGDJ_INTERPROCEDURAL_OPTIMIZATION=FALSE
+        #include:
+        #  - platform: windows-clangcl
+        #    arch: x86
+        #    args: -DGDJ_INTERPROCEDURAL_OPTIMIZATION=FALSE
 
     steps:
       - name: Checkout code
